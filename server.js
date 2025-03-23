@@ -12,12 +12,13 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: '*',
+        origin: "https://cake-frontend-eta.vercel.app", // ✅ Explicit frontend URL
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization"],
     }
 });
+
 
 io.use(async (socket, next) => {
     try {

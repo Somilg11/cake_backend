@@ -12,11 +12,12 @@ connect();
 const app = express();
 
 app.use(cors({
-    origin: ["*"],
+    origin: ["https://cake-frontend-eta.vercel.app"], // ✅ Explicit frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"],
-  }));
+    credentials: true, // ✅ Required for cookies, auth headers
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
