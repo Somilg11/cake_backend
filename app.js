@@ -12,7 +12,7 @@ connect();
 const app = express();
 
 app.use(cors({
-    origin: ["https://cake-frontend-eta.vercel.app"], // ✅ Explicit frontend URL
+    origin: ["https://cake-frontend-eta.vercel.app", "http://localhost:5173"], // ✅ Explicit frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // ✅ Required for cookies, auth headers
     allowedHeaders: ["Content-Type", "Authorization"]
